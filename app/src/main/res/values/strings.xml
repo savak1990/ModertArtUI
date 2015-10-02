@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ModertArtUI</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_moreinfo">More info</string>
+
+    <!-- More Info Dialog -->
+    <string name="moreinfo_title">More Info</string>
+    <string name="moreinfo_text">
+        Would you mind visiting moma.org site?
+    </string>
+    <string name="moreinfo_ratetext">
+        Please, rate this app before quiting.
+    </string>
+    <string name="moreinfo_visit">Visit</string>
+    <string name="moreinfo_cancel">Not Now</string>
+    <string name="moreinfo_logo_desc">MoMA</string>
+</resources>

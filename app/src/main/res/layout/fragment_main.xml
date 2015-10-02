@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityFragment">
+
+    <LinearLayout
+        android:id="@+id/baseLayout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:layout_marginBottom="@dimen/rectangles_bottom_gap">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/colorRect1"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/rectangle_gap" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/colorRect2"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/rectangle_gap" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/colorRect3"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/rectangle_gap" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/colorRect4"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/rectangle_gap" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/colorRect5"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/rectangle_gap" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/seekbar_height"
+        android:id="@+id/colorChangeSeekBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/seekbar_bottom_gap"/>
+
+
+</RelativeLayout>

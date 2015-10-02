@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.example.vklyovan.modertartui.ConfirmMoreInfoDialogFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/moreinfo_border_gap">
+
+        <ImageView
+            android:layout_height="@dimen/moreinfo_logo_height"
+            android:layout_width="@dimen/moreinfo_logo_width"
+            android:background="@drawable/moma_logo"
+            android:contentDescription="@string/moreinfo_logo_desc"
+            android:layout_margin="@dimen/moreinfo_border_gap" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/moreinfo_text"
+            android:textSize="20sp"
+            android:layout_margin="@dimen/moreinfo_border_gap" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/moreinfo_ratetext"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/moreinfo_rate_margin"
+        android:layout_marginLeft="@dimen/moreinfo_border_gap"
+        android:layout_marginRight="@dimen/moreinfo_border_gap" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moreInfoRatingBar"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/moreinfo_border_gap" />
+
+</LinearLayout>

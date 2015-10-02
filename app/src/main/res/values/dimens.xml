@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Main Activity -->
+    <dimen name="rectangle_gap">4dp</dimen>
+    <dimen name="rectangles_bottom_gap">34dp</dimen>
+    <dimen name="seekbar_height">30dp</dimen>
+    <dimen name="seekbar_bottom_gap">4dp</dimen>
+
+    <!-- More info -->
+    <dimen name="moreinfo_logo_width">70dp</dimen>
+    <dimen name="moreinfo_logo_height">70dp</dimen>
+    <dimen name="moreinfo_rate_margin">30dp</dimen>
+    <dimen name="moreinfo_border_gap">3dp</dimen>
+</resources>
