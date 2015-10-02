@@ -25,18 +25,34 @@ public class MainActivityFragment extends Fragment
 
     private View[] mRectView = new View[RECT_NUM];
     private int[] mRectColor = new int[RECT_NUM];
+    private float[] mMinSaturation = new float[RECT_NUM]; // [0.2,0.4)
+    private float[] mRangeSaturation = new float[RECT_NUM]; // [0.2,0.5)
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Random rand = new Random();
-        mRectColor[0] = Color.WHITE;
-        for (int i = 1; i < RECT_NUM; ++i) {
-            mRectColor[i] = Color.rgb(
-                    rand.nextInt(256),
-                    rand.nextInt(256),
-                    rand.nextInt(256));
+        int iWhite = rand.nextInt(5);
+        Log.i(TAG, "white index = " + iWhite);
+        for (int i = 0; i < RECT_NUM; ++i) {
+
+            if (i == iWhite) mMinSaturation[i] = 0.0f;
+            else mMinSaturation[i] = 0.2f + rand.nextFloat() * 0.4f;
+            mRangeSaturation[i] = 0.3f + rand.nextFloat() * 0.6f;
+
+            float hsv[] = new float[3];
+            hsv[0] = rand.nextInt(360);
+            hsv[1] = mMinSaturation[i];
+            if (i == iWhite) hsv[2] = 1.0f;
+            else hsv[2] = 0.5f;
+
+            mRectColor[i] = Color.HSVToColor(hsv);
+        }
+
+        for (int i = 0; i < mMinSaturation.length; ++i) {
+            Log.i(TAG, "mMinSaturation = " + mMinSaturation[i]);
+            Log.i(TAG, "mRangeSaturation = " + mRangeSaturation[i]);
         }
 
         setRetainInstance(true);
@@ -66,18 +82,24 @@ public class MainActivityFragment extends Fragment
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        Log.i(TAG, "onProgressChanged: " + progress + " fromUser = " + fromUser);
+
+        for (int i = 0; i < mRectColor.length; ++i) {
+            float hsv[] = new float[3];
+            Color.colorToHSV(mRectColor[i], hsv);
+            hsv[1] = mMinSaturation[i] + progress * (mRangeSaturation[i]) / (float) seekBar.getMax();
+            mRectColor[i] = Color.HSVToColor(hsv);
+            mRectView[i].setBackgroundColor(mRectColor[i]);
+        }
+
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
-        Log.i(TAG, "onStartTrackingTouch "
-                + seekBar.getProgress() + "/" + seekBar.getMax());
+        // NoOp
     }
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        Log.i(TAG, "onStopTrackingTouch "
-                + seekBar.getProgress() + "/" + seekBar.getMax());
+        // NoOp
     }
 }
